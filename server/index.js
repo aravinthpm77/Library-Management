@@ -7,15 +7,15 @@ const app=express()
 app.use(express.json({limit :"30mb",extended:true}))
 app.use(express.urlencoded({limit:"30mb",extended:true}))
 app.use(cors())
+const db=`mysql://avnadmin:AVNS_-YjgnNxxOrquQhcabLM@mysqldb-aravinthsdb.a.aivencloud.com:28910/book`;
+// const db=mysql.createConnection({
+//     host:"localhost",
+//     user:"root",
+//     password:"root",
+//     port: 3306,
+//     database:"book"
 
-const db=mysql.createConnection({
-    host:"localhost",
-    user:"root",
-    password:"root",
-    port: 3306,
-    database:"book"
-
-})
+// })
 app.get('/',(req,res)=>{
 
     res.send("From Backend Server");
